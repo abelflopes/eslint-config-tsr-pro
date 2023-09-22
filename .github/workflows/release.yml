@@ -38,6 +38,7 @@ jobs:
       - name: Setup npm auth
         run: |
           echo "//registry.npmjs.org :_authToken=${{ secrets.NPM_TOKEN }}" >> .npmrc
+          echo "access=public" >> .npmrc
 
       - name: Show git user
         run: git config --list
