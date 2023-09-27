@@ -12,9 +12,12 @@ const config: Linter.Config = {
     node: true,
   },
   extends: [
+    // https://www.npmjs.com/package/eslint-plugin-import
     "plugin:import/recommended",
-    "plugin:prettier/recommended",
+    // https://www.npmjs.com/package/eslint-plugin-workspaces
     "plugin:workspaces/recommended",
+    // https://www.npmjs.com/package/eslint-plugin-prettier
+    "plugin:prettier/recommended",
   ],
   rules: {
     "tsdoc/syntax": "warn",
@@ -45,15 +48,26 @@ const config: Linter.Config = {
       files: ["**/*.ts*"],
       plugins: ["eslint-plugin-tsdoc"],
       extends: [
+        // https://www.npmjs.com/package/eslint-config-xo
         "xo",
+        // https://www.npmjs.com/package/eslint-config-xo
         "xo/browser",
+        // https://www.npmjs.com/package/eslint-config-xo-react
         "xo-react",
+        // https://www.npmjs.com/package/eslint-config-typescript
         "xo-typescript",
+        // https://www.npmjs.com/package/eslint-config-ts-important-stuff
         "ts-important-stuff",
+        // https://www.npmjs.com/package/eslint-config-ts-react-important-stuff
         "ts-react-important-stuff",
+        // https://www.npmjs.com/package/eslint-config-standard-with-typescript
         "standard-with-typescript",
+        // https://www.npmjs.com/package/eslint-plugin-etc
         "plugin:etc/recommended",
+        // https://www.npmjs.com/package/eslint-plugin-unicorn
         "plugin:unicorn/recommended",
+        // https://www.npmjs.com/package/eslint-plugin-prettier
+        "plugin:prettier/recommended",
       ],
       rules: {
         /** Conflicting rules between eslint and prettier */
