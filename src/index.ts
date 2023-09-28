@@ -66,7 +66,7 @@ const config: Linter.Config = {
         "plugin:etc/recommended",
         // https://www.npmjs.com/package/eslint-plugin-unicorn
         "plugin:unicorn/recommended",
-        // https://www.npmjs.com/package/eslint-plugin-prettier
+        // https://www.npmjs.com/package/eslint-plugin-prettier (override plugins above)
         "plugin:prettier/recommended",
       ],
       rules: {
