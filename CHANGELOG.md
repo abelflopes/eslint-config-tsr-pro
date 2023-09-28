@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.0.1...v1.0.2) (2023-09-28)
+
+
+### Bug Fixes
+
+* add prettier override to typescript files ([2e67606](https://github.com/abelflopes/eslint-config-tsr-pro/commit/2e67606be16879a0be029f5c1d0b56eaa7b1b9f9))
+
 ## [1.0.1](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.0.0...v1.0.1) (2023-09-22)
 
 
