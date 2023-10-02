@@ -26,6 +26,8 @@ and includes environment settings for browser, Node.js, and ECMAScript 2021.
 
 This package aims to streamline your development workflow by maintaining code quality and ensuring a consistent coding style across your projects.
 
+To achieve maximum consistency, use along with [prettier-config-pro](https://www.npmjs.com/package/@abelflopes/prettier-config-pro);
+
 ## Installation
 
 You can install this config via npm or yarn:
@@ -40,7 +42,6 @@ yarn add @abelflopes/eslint-config-tsr-pro --dev
 
 To use this configuration in your project, create an ESLint configuration file
 (e.g., .eslintrc.js) and extend `@abelflopes/eslint-config-tsr-pro`:
-
 
 ```js
 // .eslintrc.js
