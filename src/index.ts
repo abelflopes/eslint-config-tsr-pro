@@ -70,11 +70,45 @@ const config: Linter.Config = {
         "plugin:prettier/recommended",
       ],
       rules: {
-        /** Conflicting rules between eslint and prettier */
-        "@typescript-eslint/semi": ["error", "always"],
-        "@typescript-eslint/quotes": ["error", "double"],
-        "comma-dangle": ["error", "only-multiline"],
-        "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
+        // Prefer component arrow functions
+        "react/function-component-definition": [
+          1,
+          {
+            namedComponents: "arrow-function",
+            unnamedComponents: "arrow-function",
+          },
+        ],
+        // Ignore to allow usage of tsconfig aliases
+        "import/no-unresolved": 1,
+        // Allow abbreviations
+        "unicorn/prevent-abbreviations": [
+          1,
+          {
+            checkProperties: true,
+            allowList: {
+              db: true,
+              param: true,
+              params: true,
+              props: true,
+              Props: true,
+            },
+          },
+        ],
+        "@typescript-eslint/strict-boolean-expressions": 1,
+        "unicorn/filename-case": [
+          1,
+          {
+            cases: {
+              kebabCase: true,
+              pascalCase: true,
+            },
+          },
+        ],
+        "react/button-has-type": 1,
+        "no-implicit-coercion": 1,
+        "unicorn/no-array-reduce": 1,
+        "unicorn/no-array-for-each": 1,
+        "capitalized-comments": 1,
       },
     },
   ],
