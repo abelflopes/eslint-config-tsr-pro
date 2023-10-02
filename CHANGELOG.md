@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.0.2...v1.1.0) (2023-10-02)
+
+
+### Features
+
+* update configuration, remove excessively strict rules ([cb97c04](https://github.com/abelflopes/eslint-config-tsr-pro/commit/cb97c04822c54db7b5217198d553ad9c91776ed6))
+
 ## [1.0.2](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.0.1...v1.0.2) (2023-09-28)
 
 
