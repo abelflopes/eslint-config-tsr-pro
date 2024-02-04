@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Config Snapshot Configuration remains as expected 1`] = `
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+  },
+  "extends": [
+    "plugin:import/recommended",
+    "plugin:workspaces/recommended",
+    "plugin:prettier/recommended",
+  ],
+  "ignorePatterns": [
+    "dist",
+  ],
+  "overrides": [
+    {
+      "extends": [
+        "plugin:jest/recommended",
+      ],
+      "files": [
+        "**/*.test.ts*",
+      ],
+      "plugins": [
+        "jest",
+      ],
+    },
+    {
+      "extends": [
+        "xo",
+        "xo/browser",
+        "xo-react",
+        "xo-typescript",
+        "ts-important-stuff",
+        "ts-react-important-stuff",
+        "standard-with-typescript",
+        "plugin:etc/recommended",
+        "plugin:unicorn/recommended",
+        "plugin:prettier/recommended",
+      ],
+      "files": [
+        "**/*.ts*",
+      ],
+      "plugins": [
+        "eslint-plugin-tsdoc",
+      ],
+      "rules": {
+        "@typescript-eslint/strict-boolean-expressions": 1,
+        "capitalized-comments": 1,
+        "import/no-unresolved": 1,
+        "no-implicit-coercion": 1,
+        "react/button-has-type": 1,
+        "react/function-component-definition": [
+          1,
+          {
+            "namedComponents": "arrow-function",
+            "unnamedComponents": "arrow-function",
+          },
+        ],
+        "unicorn/filename-case": [
+          1,
+          {
+            "cases": {
+              "kebabCase": true,
+              "pascalCase": true,
+            },
+          },
+        ],
+        "unicorn/no-array-for-each": 1,
+        "unicorn/no-array-reduce": 1,
+        "unicorn/prevent-abbreviations": [
+          1,
+          {
+            "allowList": {
+              "Props": true,
+              "db": true,
+              "param": true,
+              "params": true,
+              "props": true,
+            },
+            "checkProperties": true,
+          },
+        ],
+      },
+    },
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+  },
+  "rules": {
+    "linebreak-style": [
+      "error",
+      "unix",
+    ],
+    "max-len": [
+      "error",
+      {
+        "code": 100,
+        "ignoreComments": true,
+        "ignoreStrings": true,
+      },
+    ],
+    "tsdoc/syntax": "warn",
+  },
+}
+`;

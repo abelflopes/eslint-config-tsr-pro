@@ -1,5 +1,5 @@
 import { ESLint } from "eslint";
-import baseConfig from "./index";
+import baseConfig from "../src/index";
 
 describe("Eslint Config", () => {
   it("should be a configuration object compatible with Eslint", async () => {

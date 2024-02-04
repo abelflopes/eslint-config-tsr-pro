@@ -11,8 +11,10 @@
     "prepare": "husky install",
     "start": "tsc -p tsconfig.build.json -w",
     "build": "tsc -p tsconfig.build.json",
-    "test": "jest",
-    "lint": "eslint . --ext ts,tsx",
+    "test": "npm run test:unit && npm run test:snapshot",
+    "test:unit": "jest --testPathPattern=\".unit.*\"",
+    "test:snapshot": "jest --testPathPattern=\".snapshot.*\"",
+    "test:snapshot:update": "npm run test:snapshot -- -u",
     "format": "prettier . --check --cache --ignore-unknown",
     "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x",
     "clean": "rm -rf dist node_modules"
