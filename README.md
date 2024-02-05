@@ -45,6 +45,7 @@ Used plugins / configs:
 - [x] [jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
 - [x] [Eslint Comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
 - [ ] [Stylistic (TODO)](https://www.npmjs.com/package/@stylistic/eslint-plugin)
+- [ ] [N (TODO)](https://www.npmjs.com/package/eslint-plugin-n)
 
 To achieve maximum consistency, use along with [prettier-config-pro](https://www.npmjs.com/package/@abelflopes/prettier-config-pro);
 
