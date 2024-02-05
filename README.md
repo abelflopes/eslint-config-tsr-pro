@@ -10,7 +10,7 @@
 
 <br />
 
-Professional grade eslint configuration targeted for typescript & react projects
+Professional grade Eslint configuration targeted for typescript & react projects
 
 </div>
 
@@ -25,6 +25,26 @@ It extends popular ESLint configurations, incorporates rules to prevent conflict
 and includes environment settings for browser, Node.js, and ECMAScript 2021. 
 
 This package aims to streamline your development workflow by maintaining code quality and ensuring a consistent coding style across your projects.
+
+It makes use of the recommended settings of each plugin, and extends with extra configuration not present on the recommended preset.
+
+Used plugins / configs:
+- [x] [Eslint](https://eslint.org/docs/latest/rules/)
+- [x] [Typescript (Eslint)](https://www.npmjs.com/package/@typescript-eslint/eslint-plugin)
+- [x] [Workspaces](https://www.npmjs.com/package/eslint-plugin-workspaces)
+- [x] [TSDoc](https://www.npmjs.com/package/eslint-plugin-tsdoc)
+- [x] [React](https://www.npmjs.com/package/eslint-plugin-react)
+- [x] [React Hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+- [x] [React Refresh](https://www.npmjs.com/package/eslint-plugin-react-refresh)
+- [x] [Imports](https://www.npmjs.com/package/eslint-plugin-import)
+- [ ] [Import Helpers](https://www.npmjs.com/package/eslint-plugin-import-helpers)
+- [x] [Prettier](https://www.npmjs.com/package/eslint-plugin-prettier)
+- [ ] [Unicorn (TODO)](https://www.npmjs.com/package/eslint-plugin-unicorn)
+- [x] [Etc](https://www.npmjs.com/package/eslint-plugin-etc)
+- [x] [Jest](https://www.npmjs.com/package/eslint-plugin-jest)
+- [x] [jsx-a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
+- [x] [Eslint Comments](https://www.npmjs.com/package/eslint-plugin-eslint-comments)
+- [ ] [Stylistic (TODO)](https://www.npmjs.com/package/@stylistic/eslint-plugin)
 
 To achieve maximum consistency, use along with [prettier-config-pro](https://www.npmjs.com/package/@abelflopes/prettier-config-pro);
 

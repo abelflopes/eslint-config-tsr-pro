@@ -1,7 +1,7 @@
-import baseConfig from "../src/index";
+import baseConfig from "../src";
 
-describe("Config Snapshot", () => {
-  test("Configuration remains as expected", async () => {
+describe("eslint config", () => {
+  it("configuration remains as expected", () => {
     expect(baseConfig).toMatchSnapshot();
   });
 });
