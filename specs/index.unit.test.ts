@@ -36,6 +36,19 @@ describe("eslint config", () => {
       filePath: "./index.ts",
     });
 
-    expect(res.map((i) => i.usedDeprecatedRules).length).toBeLessThanOrEqual(5);
+    const deprecatedRules = res.flatMap((i) => i.usedDeprecatedRules);
+
+    // eslint-disable-next-line no-console -- send information of deprecated rules to the console
+    console.error(
+      "Deprecated rules:",
+      deprecatedRules
+        .map(
+          ({ ruleId, replacedBy }) =>
+            `\n - ${ruleId}${replacedBy.length ? ` (replaced by ${replacedBy.join("; ")})` : ""}`,
+        )
+        .join(""),
+    );
+
+    expect(deprecatedRules.length).toBeLessThanOrEqual(5);
   });
 });

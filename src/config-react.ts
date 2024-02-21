@@ -1,7 +1,12 @@
-import type { Linter } from "eslint";
+import { type Linter } from "eslint";
 
 export const configReact = {
   files: ["**/*.{tsx,jsx}"],
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -21,30 +26,17 @@ export const configReact = {
     "react/iframe-missing-sandbox": "warn",
     "react/jsx-boolean-value": "warn",
     "react/jsx-child-element-spacing": "warn",
-    "react/jsx-closing-bracket-location": "warn",
     "react/jsx-closing-tag-location": "warn",
     "react/jsx-curly-spacing": "warn",
     "react/jsx-equals-spacing": "warn",
     "react/jsx-filename-extension": ["warn", { extensions: [".jsx", ".tsx"] }],
     "react/jsx-first-prop-new-line": "warn",
     "react/jsx-handler-names": "warn",
-    "react/jsx-indent": [
-      "warn",
-      2,
-      {
-        checkAttributes: true,
-        indentLogicalExpressions: true,
-      },
-    ],
     "react/jsx-fragments": "warn",
-    "react/jsx-indent-props": "warn",
     "react/jsx-max-depth": ["warn", { max: 4 }],
-    "react/jsx-max-props-per-line": ["warn", { maximum: { single: 3, multi: 1 } }],
-    "react/jsx-newline": "warn",
     "react/jsx-no-constructed-context-values": "error",
     "react/jsx-no-leaked-render": "warn",
     "react/jsx-no-useless-fragment": "error",
-    "react/jsx-one-expression-per-line": "warn",
     "react/jsx-pascal-case": "warn",
     "react/jsx-props-no-multi-spaces": "warn",
     "react/jsx-sort-props": [
@@ -72,8 +64,8 @@ export const configReact = {
     "react/no-typos": "error",
     "react/no-unstable-nested-components": "error",
     "react/prefer-read-only-props": "error",
+    "react/prop-types": "off",
     "react/self-closing-comp": "warn",
-    "react/style-prop-object": "error",
     "react/void-dom-elements-no-children": "error",
     // React Refresh
     "react-refresh/only-export-components": "warn",

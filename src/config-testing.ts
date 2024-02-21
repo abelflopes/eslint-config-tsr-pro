@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import { type Linter } from "eslint";
 
 export const configTesting = {
   files: ["**/*.{test,spec}.*"],
@@ -8,7 +8,6 @@ export const configTesting = {
     "jest/consistent-test-it": "error",
     "jest/max-expects": "error",
     "jest/max-nested-describe": ["error", { max: 3 }],
-    "jest/no-conditional-in-test": "error",
     "jest/no-confusing-set-timeout": "warn",
     "jest/no-duplicate-hooks": "error",
     "jest/no-large-snapshots": "warn",

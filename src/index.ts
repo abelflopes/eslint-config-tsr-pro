@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import { type Linter } from "eslint";
 import { configBase } from "./config-base";
 import { configTesting } from "./config-testing";
 import { configTypescript } from "./config-typescript";
@@ -33,7 +33,7 @@ import { configReact } from "./config-react";
 const config: Linter.Config = {
   ...configBase,
   overrides: [configTesting, configTypescript, configReact],
-  ignorePatterns: ["dist", "node_modules", "tmp"],
+  ignorePatterns: ["**/dist/**", "**/node_modules/*", "**/tmp/**"],
 };
 
 module.exports = config;

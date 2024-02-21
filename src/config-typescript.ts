@@ -1,11 +1,11 @@
-import type { Linter } from "eslint";
+import { type Linter } from "eslint";
 import { configBase } from "./config-base";
 
 export const configTypescript = {
   files: ["**/*.ts*"],
   parser: "@typescript-eslint/parser",
   plugins: ["@typescript-eslint", "eslint-plugin-tsdoc"],
-  extends: ["plugin:@typescript-eslint/recommended"],
+  extends: ["plugin:@typescript-eslint/recommended-type-checked"],
   rules: {
     // TSDOC
     "tsdoc/syntax": "warn",
@@ -28,7 +28,7 @@ export const configTypescript = {
     "@typescript-eslint/default-param-last": configBase.rules["default-param-last"],
     "dot-notation": "off",
     "@typescript-eslint/dot-notation": configBase.rules["dot-notation"],
-    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/explicit-function-return-type": "error",
     "@typescript-eslint/explicit-member-accessibility": "warn",
     "@typescript-eslint/explicit-module-boundary-types": "warn",
     "init-declarations": "off",
@@ -53,7 +53,7 @@ export const configTypescript = {
     "no-throw-literal": "off",
     "@typescript-eslint/no-throw-literal": configBase.rules["no-throw-literal"],
     "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-    "@typescript-eslint/no-unnecessary-condition": "error",
+    "@typescript-eslint/no-unnecessary-condition": "warn",
     "@typescript-eslint/no-unnecessary-qualifier": "error",
     "@typescript-eslint/no-unnecessary-type-arguments": "warn",
     "@typescript-eslint/no-unsafe-unary-minus": "error",

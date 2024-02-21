@@ -14,9 +14,9 @@ exports[`eslint config configuration remains as expected 1`] = `
     "plugin:etc/recommended",
   ],
   "ignorePatterns": [
-    "dist",
-    "node_modules",
-    "tmp",
+    "**/dist/**",
+    "**/node_modules/*",
+    "**/tmp/**",
   ],
   "overrides": [
     {
@@ -38,7 +38,6 @@ exports[`eslint config configuration remains as expected 1`] = `
             "max": 3,
           },
         ],
-        "jest/no-conditional-in-test": "error",
         "jest/no-confusing-set-timeout": "warn",
         "jest/no-duplicate-hooks": "error",
         "jest/no-large-snapshots": "warn",
@@ -67,7 +66,7 @@ exports[`eslint config configuration remains as expected 1`] = `
     },
     {
       "extends": [
-        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-type-checked",
       ],
       "files": [
         "**/*.ts*",
@@ -106,7 +105,7 @@ exports[`eslint config configuration remains as expected 1`] = `
         ],
         "@typescript-eslint/default-param-last": "error",
         "@typescript-eslint/dot-notation": "error",
-        "@typescript-eslint/explicit-function-return-type": "warn",
+        "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/explicit-member-accessibility": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "warn",
         "@typescript-eslint/init-declarations": "warn",
@@ -126,7 +125,7 @@ exports[`eslint config configuration remains as expected 1`] = `
         "@typescript-eslint/no-non-null-assertion": "error",
         "@typescript-eslint/no-throw-literal": "error",
         "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
-        "@typescript-eslint/no-unnecessary-condition": "error",
+        "@typescript-eslint/no-unnecessary-condition": "warn",
         "@typescript-eslint/no-unnecessary-qualifier": "error",
         "@typescript-eslint/no-unnecessary-type-arguments": "warn",
         "@typescript-eslint/no-unsafe-unary-minus": "error",
@@ -143,7 +142,6 @@ exports[`eslint config configuration remains as expected 1`] = `
         "@typescript-eslint/prefer-optional-chain": "warn",
         "@typescript-eslint/prefer-promise-reject-errors": "error",
         "@typescript-eslint/prefer-readonly": "warn",
-        "@typescript-eslint/prefer-readonly-parameter-types": "warn",
         "@typescript-eslint/prefer-reduce-type-parameter": "error",
         "@typescript-eslint/prefer-string-starts-ends-with": "warn",
         "@typescript-eslint/promise-function-async": "error",
@@ -209,7 +207,6 @@ exports[`eslint config configuration remains as expected 1`] = `
         "react/iframe-missing-sandbox": "warn",
         "react/jsx-boolean-value": "warn",
         "react/jsx-child-element-spacing": "warn",
-        "react/jsx-closing-bracket-location": "warn",
         "react/jsx-closing-tag-location": "warn",
         "react/jsx-curly-spacing": "warn",
         "react/jsx-equals-spacing": "warn",
@@ -225,35 +222,15 @@ exports[`eslint config configuration remains as expected 1`] = `
         "react/jsx-first-prop-new-line": "warn",
         "react/jsx-fragments": "warn",
         "react/jsx-handler-names": "warn",
-        "react/jsx-indent": [
-          "warn",
-          2,
-          {
-            "checkAttributes": true,
-            "indentLogicalExpressions": true,
-          },
-        ],
-        "react/jsx-indent-props": "warn",
         "react/jsx-max-depth": [
           "warn",
           {
             "max": 4,
           },
         ],
-        "react/jsx-max-props-per-line": [
-          "warn",
-          {
-            "maximum": {
-              "multi": 1,
-              "single": 3,
-            },
-          },
-        ],
-        "react/jsx-newline": "warn",
         "react/jsx-no-constructed-context-values": "error",
         "react/jsx-no-leaked-render": "warn",
         "react/jsx-no-useless-fragment": "error",
-        "react/jsx-one-expression-per-line": "warn",
         "react/jsx-pascal-case": "warn",
         "react/jsx-props-no-multi-spaces": "warn",
         "react/jsx-sort-props": [
@@ -281,15 +258,20 @@ exports[`eslint config configuration remains as expected 1`] = `
         "react/no-typos": "error",
         "react/no-unstable-nested-components": "error",
         "react/prefer-read-only-props": "error",
+        "react/prop-types": "off",
         "react/self-closing-comp": "warn",
-        "react/style-prop-object": "error",
         "react/void-dom-elements-no-children": "error",
+      },
+      "settings": {
+        "react": {
+          "version": "detect",
+        },
       },
     },
   ],
   "parserOptions": {
-    "ecmaVersion": "latest",
-    "project": "/Users/alopes/Desktop/dev-abel/eslint-config-tsr-pro/tsconfig.json",
+    "ecmaVersion": 2015,
+    "project": true,
     "sourceType": "module",
   },
   "plugins": [
@@ -307,9 +289,8 @@ exports[`eslint config configuration remains as expected 1`] = `
     "class-methods-use-this": "warn",
     "complexity": [
       "warn",
-      3,
+      10,
     ],
-    "consistent-return": "warn",
     "consistent-this": "warn",
     "curly": [
       "error",
@@ -322,22 +303,27 @@ exports[`eslint config configuration remains as expected 1`] = `
     "dot-notation": "error",
     "eqeqeq": "error",
     "eslint-comments/no-unused-disable": "warn",
-    "eslint-comments/require-description": "warn",
+    "eslint-comments/require-description": [
+      "warn",
+      {
+        "ignore": [
+          "eslint-enable",
+        ],
+      },
+    ],
     "etc/no-commented-out-code": "warn",
     "etc/no-const-enum": "warn",
     "etc/no-enum": "warn",
-    "etc/no-misused-generics": "error",
-    "etc/prefer-interface": "warn",
-    "etc/prefer-less-than": "warn",
     "etc/throw-error": "error",
     "etc/underscore-internal": "warn",
     "grouped-accessor-pairs": "error",
-    "import/consistent-type-specifier-style": "warn",
+    "import/consistent-type-specifier-style": [
+      "warn",
+      "prefer-inline",
+    ],
     "import/export": "warn",
     "import/exports-last": "warn",
-    "import/extensions": "error",
     "import/first": "error",
-    "import/group-exports": "warn",
     "import/named": "warn",
     "import/newline-after-import": "warn",
     "import/no-absolute-path": "error",
@@ -346,7 +332,6 @@ exports[`eslint config configuration remains as expected 1`] = `
     "import/no-duplicates": "warn",
     "import/no-empty-named-blocks": "error",
     "import/no-extraneous-dependencies": "error",
-    "import/no-internal-modules": "warn",
     "import/no-mutable-exports": "warn",
     "import/no-named-as-default": "warn",
     "import/no-named-as-default-member": "warn",
@@ -382,7 +367,10 @@ exports[`eslint config configuration remains as expected 1`] = `
       "warn",
       200,
     ],
-    "max-lines-per-function": "warn",
+    "max-lines-per-function": [
+      "warn",
+      150,
+    ],
     "max-nested-callbacks": [
       "warn",
       5,
@@ -488,7 +476,6 @@ exports[`eslint config configuration remains as expected 1`] = `
       "as-needed",
     ],
     "require-atomic-updates": "error",
-    "require-await": "error",
     "require-unicode-regexp": "warn",
     "sort-imports": [
       "warn",
@@ -500,7 +487,6 @@ exports[`eslint config configuration remains as expected 1`] = `
     ],
     "symbol-description": "error",
     "vars-on-top": "error",
-    "workspaces/no-cross-imports": "error",
     "yoda": "warn",
   },
 }

@@ -1,5 +1,6 @@
-import type { Linter } from "eslint";
-import path from "path";
+/* eslint-disable etc/no-commented-out-code -- TODO: to confirm ETC plugin rules */
+
+import { type Linter } from "eslint";
 
 export const configBase = {
   env: {
@@ -8,8 +9,8 @@ export const configBase = {
     node: true,
   },
   parserOptions: {
-    project: path.resolve(process.cwd(), "./tsconfig.json"),
-    ecmaVersion: "latest",
+    project: true,
+    ecmaVersion: 2015,
     sourceType: "module",
   },
   plugins: ["prettier", "import", "eslint-comments"],
@@ -38,8 +39,7 @@ export const configBase = {
     "arrow-body-style": ["error", "as-needed"],
     "block-scoped-var": "error",
     "class-methods-use-this": "warn",
-    "complexity": ["warn", 3],
-    "consistent-return": "warn",
+    "complexity": ["warn", 10],
     "consistent-this": "warn",
     "curly": ["error", "multi-or-nest", "consistent"],
     "default-case": "warn",
@@ -52,7 +52,7 @@ export const configBase = {
     "max-classes-per-file": "error",
     "max-depth": ["warn", 4],
     "max-lines": ["warn", 200],
-    "max-lines-per-function": "warn",
+    "max-lines-per-function": ["warn", 150],
     "max-nested-callbacks": ["warn", 5],
     "max-params": "error",
     "new-cap": "warn",
@@ -113,7 +113,7 @@ export const configBase = {
     "prefer-spread": "warn",
     "prefer-template": "warn",
     "radix": ["error", "as-needed"],
-    "require-await": "error",
+    // "require-await": "error", // FIXME: require await or return promise
     "require-unicode-regexp": "warn",
     "sort-imports": [
       "warn",
@@ -126,8 +126,6 @@ export const configBase = {
     "line-comment-position": ["warn", { position: "above" }],
     // Prettier
     "prettier/prettier": "warn",
-    // Workspaces
-    "workspaces/no-cross-imports": "error",
     // Import
     "import/export": "warn",
     "import/no-deprecated": "error",
@@ -140,29 +138,30 @@ export const configBase = {
     "import/named": "warn",
     "import/no-absolute-path": "error",
     "import/no-cycle": "error",
-    "import/no-internal-modules": "warn",
     "import/no-relative-packages": "error",
     "import/no-relative-parent-imports": "warn",
     "import/no-self-import": "error",
     "import/no-useless-path-segments": "error",
     "import/no-webpack-loader-syntax": "warn",
-    "import/consistent-type-specifier-style": "warn",
+    "import/consistent-type-specifier-style": ["warn", "prefer-inline"],
     "import/exports-last": "warn",
-    "import/extensions": "error",
     "import/first": "error",
-    "import/group-exports": "warn",
     "import/newline-after-import": "warn",
     "import/no-duplicates": "warn",
     // Comments
     "eslint-comments/no-unused-disable": "warn",
-    "eslint-comments/require-description": "warn",
+    "eslint-comments/require-description": ["warn", { ignore: ["eslint-enable"] }],
     // Etc
     "etc/no-commented-out-code": "warn",
     "etc/no-const-enum": "warn",
     "etc/no-enum": "warn",
-    "etc/no-misused-generics": "error",
-    "etc/prefer-interface": "warn",
-    "etc/prefer-less-than": "warn",
+    // "etc/no-misused-generics": "error", // FIXME: https://github.com/cartant/eslint-plugin-etc/issues/64
+    // "etc/prefer-interface": [ // FIXME: allow functions to be type alias
+    //   "warn",
+    //   {
+    //     allowLocal: true,
+    //   },
+    // ],
     "etc/throw-error": "error",
     "etc/underscore-internal": "warn",
     // Stylistic / TODO: check deprecated
@@ -196,3 +195,5 @@ export const configBase = {
     ],
   },
 } satisfies Linter.Config;
+
+/* eslint-enable */
