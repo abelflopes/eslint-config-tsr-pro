@@ -28,9 +28,9 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run test
-
       - run: npm run build
+
+      - run: npm run test
 
       - name: Verify the integrity of provenance attestations and registry signatures for installed dependencies
         run: npm audit signatures
