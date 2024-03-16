@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v2.0.0...v2.0.1) (2024-03-16)
+
+
+### Bug Fixes
+
+* remove conflict with prettier formatter ([4123f79](https://github.com/abelflopes/eslint-config-tsr-pro/commit/4123f79b093e03c621668e3f4ba6077f63a430f5))
+
 ## [2.0.0](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.1.0...v2.0.0) (2024-02-21)
 
 
