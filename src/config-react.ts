@@ -25,7 +25,6 @@ export const configReact = {
     "react/hook-use-state": ["error", { allowDestructuredState: true }],
     "react/iframe-missing-sandbox": "warn",
     "react/jsx-boolean-value": "warn",
-    "react/jsx-child-element-spacing": "warn",
     "react/jsx-closing-tag-location": "warn",
     "react/jsx-curly-spacing": "warn",
     "react/jsx-equals-spacing": "warn",
