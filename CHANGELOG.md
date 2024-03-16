@@ -1,3 +1,15 @@
+## [2.0.0](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.1.0...v2.0.0) (2024-02-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* update configuration - add more rules & plugins
+
+### Features
+
+* update configuration - add more rules & plugins ([e162a98](https://github.com/abelflopes/eslint-config-tsr-pro/commit/e162a98a06de76bf6737ef3181f024fa1300aeec))
+* update lint config ([c1b2bf0](https://github.com/abelflopes/eslint-config-tsr-pro/commit/c1b2bf0e542f21a1718fe549db125949a3dc0f01))
+
 ## [1.1.0](https://github.com/abelflopes/eslint-config-tsr-pro/compare/v1.0.2...v1.1.0) (2023-10-02)
 
 
