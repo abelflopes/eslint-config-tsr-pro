@@ -17,7 +17,8 @@
     "format": "prettier . --check --cache --ignore-unknown",
     "lint": "eslint . --ext ts --cache",
     "todo": "npx leasot '**/**' '.**/**' -i '**/node_modules/**' -S -x",
-    "clean": "rm -rf dist node_modules"
+    "clean": "rm -rf dist node_modules",
+    "audit": "sh scripts/audit.sh"
   },
   "keywords": [
     "eslint",
