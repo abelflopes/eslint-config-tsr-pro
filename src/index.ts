@@ -28,6 +28,9 @@ import { configReact } from "./config-react";
  * - [x] jsx-a11y - {@link https://www.npmjs.com/package/eslint-plugin-jsx-a11y}
  * - [x] Eslint Comments - {@link https://www.npmjs.com/package/eslint-plugin-eslint-comments}
  * - [ ] Stylistic - {@link https://www.npmjs.com/package/@stylistic/eslint-plugin}
+ * - [ ] [N (TODO)](https://www.npmjs.com/package/eslint-plugin-n)
+ * - [ ] [Compat (TODO)](https://github.com/amilajack/eslint-plugin-compat)
+ * - [ ] [Promise](https://github.com/eslint-community/eslint-plugin-promise)
  */
 
 const config: Linter.Config = {
