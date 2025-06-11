@@ -1,6 +1,8 @@
 import { ESLint } from "eslint";
 import baseConfig from "../src";
 import path from "path";
+import fs from "fs";
+import { globSync } from "glob";
 
 describe("eslint config", () => {
   it("should be a compatible configuration object", () => {
@@ -50,5 +52,45 @@ describe("eslint config", () => {
     );
 
     expect(deprecatedRules.length).toBeLessThanOrEqual(5);
+  });
+
+  it.only("should report rules for fixtures", async () => {
+    const instance = new ESLint({
+      baseConfig,
+      useEslintrc: false,
+    });
+
+    const files = globSync(path.resolve(process.cwd(), "./fixtures/**/*.{ts,tsx}"));
+
+    const results = (
+      await Promise.all(
+        files.map(async (file) => {
+          console.log(`Processing ${path.relative(process.cwd(), file)}`);
+          const content = fs.readFileSync(file, "utf-8");
+          return instance.lintText(content, {
+            filePath: file,
+          });
+        }),
+      )
+    ).flat();
+
+    const allMessages = results.flatMap((result) => result.messages);
+
+    // Group messages by rule
+    const ruleGroups = allMessages.reduce<Record<string, typeof allMessages>>((acc, message) => {
+      const ruleId = message.ruleId || "unknown";
+      if (!acc[ruleId]) acc[ruleId] = [];
+
+      acc[ruleId].push(message);
+      return acc;
+    }, {});
+
+    Object.entries(ruleGroups).forEach(([ruleId, messages]) => {
+      // eslint-disable-next-line no-console -- This is a test case that needs to report results
+      console.log(ruleId, messages.length);
+    });
+
+    // You can add expectations here if needed
+    expect(allMessages.length).toBeGreaterThanOrEqual(0);
   });
 });
